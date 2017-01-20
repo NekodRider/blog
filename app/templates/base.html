@@ -1,0 +1,35 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}} - microblog</title>
+    {% else %}
+    <title>microblog</title>
+    {% endif %}
+  </head>
+  <body>
+    <div style="display: inline-block">Microblog: <a href="/index">Home</a>
+        {% if user.name=='' %}
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        {% endif %}
+        {% if user.name!='' %}
+        <a href="/logout">Logout</a>
+        {% endif %}
+        <a href="/directory">Directory</a>
+        {% if user.id=='Driver' %}
+        <a href="/post">Post</a>
+        {% endif %}
+    </div>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+</html>

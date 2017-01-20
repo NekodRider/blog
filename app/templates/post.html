@@ -1,0 +1,19 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Post</h1>
+  <form method="get" action="/post"  name="post">
+      <p>
+            <br/><br/>
+            Title:
+            <input type="text" name="name" />
+      </p>
+      <p>
+            <br/><br/>
+            Content:
+            <input type="text" name="content" />
+      </p>
+      <p><input type="submit" value="Submit"></p>
+  </form>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Edit</h1>
+  <form method="get" action="/directory/{{ art_name }}/edit"  name="edit">
+      <p>
+            <br/><br/>
+            Title:{{ art_name }}
+      </p>
+      <p>
+            <br/><br/>
+            Content:
+            <input type="text" name="content" />
+      </p>
+      <p><input type="submit" value="Submit"></p>
+  </form>
+{% endblock %}

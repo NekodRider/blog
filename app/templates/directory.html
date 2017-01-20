@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+{% for article in articles %}
+    <div><p><b><h2><a href="/directory/{{article['name']}}">{{article['name']}}</a></h2></b></p></div>
+{% endfor %}
+{% endblock %}
